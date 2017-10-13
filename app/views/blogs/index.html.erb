@@ -9,15 +9,21 @@
   </tr>
   
 <% @blogs.each do |blog| %>
+  <% if blog.title.length > 10 then %>
+    <% blog.title = blog.title.slice(0,10)+'...' %>
+  <% end %>
+  <% if blog.content.length > 20 then %>
+    <% blog.content = blog.content.slice(0,20)+'...' %>
+  <% end %>
   <tr>
     <td><%= blog.title %></td>
     <td><%= blog.content %></td>
-    <td><%= link_to '詳細を確認する', blog_path(blog.id) %></td>
-    <td><%= link_to 'ブログを編集する', edit_blog_path(blog.id), data: {confirm: '本当に編集していいですか？'} %></td>
-    <td><%= link_to 'ブログを削除する', blog_path(blog.id), method: :delete, data: {confirm: '本当に削除していいですか？'} %></td>
+    <td><%= link_to '詳細', blog_path(blog.id) %></td>
+    <td><%= link_to '編集', edit_blog_path(blog.id), data: {confirm: '本当に編集していいですか？'} %></td>
+    <td><%= link_to '削除', blog_path(blog.id), method: :delete, data: {confirm: '本当に削除していいですか？'} %></td>
   </tr>
 <% end %>
 </table>
-
-<%= link_to 'DIVE INTO CODEのページへ', 'https://diveintocode.jp/'  %>
-<%= link_to 'ブログ一覧画面にもどる', blogs_path %>
+<div>
+  <%= link_to 'DIVE INTO CODE', 'https://diveintocode.jp/'  %>
+</div>
