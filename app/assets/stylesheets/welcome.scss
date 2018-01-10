@@ -1,0 +1,26 @@
+.main-header {
+  padding-bottom: 15%;
+  width: 100%;
+  background-size: 100% auto;
+  background-image: url("audience.png");
+  background-attachment: fixed;
+}
+
+.main-header img {
+  width: 10%;
+  padding-top: 15%;
+}
+
+.about {
+  color: #333;
+  padding: 80px;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  text-align: center;
+}
