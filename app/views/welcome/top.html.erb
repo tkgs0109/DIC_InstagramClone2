@@ -6,18 +6,24 @@
   </div>
 </section>
 <section class="about">
-  <h1>Bootstrapシリーズ課題2</h1>
+  <h1>DICシリーズ課題</h1>
   <h2>BlogApp</h2>
+  <div class="link-buttons">
+    <% if logged_in? %>
+      <%= link_to 'ブログ一覧へ', blogs_path, class:'btn btn-primary btn-lg' %>
+    <% else %>
+      <%= link_to 'LOGIN', new_session_path, class:'btn btn-default btn-lg' %>
+      <%= link_to 'SIGNUP', new_user_path, class:'btn btn-primary btn-lg' %>
+    <% end %>
+  </div>
   <p>
     Bootstrapシリーズ課題2で作成したブログアプリです。<br>
     グリッドデザインと、ボタンにBootstrapを使用しています。
   </p>
   <p>
-    今回初めてアプリケーションに画像を組み込んでみましたが、置き場などもちゃんと決まっていて、<br>
-    それを守れば非常に簡単に実装出来て感心です。<br>
-    なるほど、これがrailに乗るということ...
+    フリー素材はいらすとやさんから拝借。
   </p>
   <p>
-    ちなみにフリー素材はいらすとやさんから拝借。
+    2018/1/11 ログイン機能実装(ログインシリーズ課題)
   </p>
 </section>
