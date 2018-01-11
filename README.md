@@ -41,14 +41,14 @@ herokuにデプロイ、HerokuとGithubレポジトリのURLを提出。
 7. ルーティングの設定
   -※ログインシステム6を参照
 8. viewの設定
-  1. 登録フォームの作成[text6]
-  2. エラーメッセージの設定[text7]
-  3. User詳細ページの作成[text8]
+  - 登録フォームの作成[text6]
+  - エラーメッセージの設定[text7]
+  - User詳細ページの作成[text8]
 9. sessionsコントローラーの作成、設定
-  1. routing設定[text9]
-  2. ログインフォーム作成[text10]
-  3. ログイン処理実装[text11]
+  - routing設定[text9]
+  - ログインフォーム作成[text10]
+  - ログイン処理実装[text11]
 10. Headderの再構成
-  1. ログイン状態に応じて内容の変化するHeadder[text12]
+  - ログイン状態に応じて内容の変化するHeadder[text12]
 11. ログアウト処理実装
-  1. sessionsコントローラーの設定[text13]
+  - sessionsコントローラーの設定[text13]
