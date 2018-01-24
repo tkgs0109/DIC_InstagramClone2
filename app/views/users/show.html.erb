@@ -1,10 +1,23 @@
 <h1><%= @user.name %>のページ</h1>
 <p>メールアドレス: <%= @user.email %></p>
-<p>
-  <strong>Icon:</strong>
-  <%= image_tag @user.icon %>
-</p>
-
+<% if @user.icon? %>
+  <p>
+    <strong>Icon:</strong>
+    <%= image_tag @user.icon %>
+  </p>
+<% else %>
+  <h3>アイコンを登録しましょう</h3>
+  <%= form_with(model: @user, local: true) do |f| %>
+    <table>
+      <tr>
+        <td><%= f.label :icon %></td>
+        <td><%= f.file_field :icon, id: :user_icon %></td>
+        <td><%= f.hidden_field :image_cache %></td>
+      </tr>
+    </table>
+    <%= f.submit "icon登録" %>
+  <% end %>
+<% end %>
 <h2>お気に入り</h2>
 <div class="row">
   <% @favorite_blogs.each do |blog| %>
