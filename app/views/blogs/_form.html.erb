@@ -14,9 +14,14 @@
       <td><%= form.label :title %></td>
       <td><%= form.text_field :title %></td>
     </tr>
-    <tr class="blog_title">
+    <tr class="blog_content">
       <td><%= form.label :content %></td>
       <td><%= form.text_area :content, :size => "30x5" %></td>
+    </tr>
+    <tr class="blog_image">
+      <td><%= form.label :image %></td>
+      <td><%= form.file_field :image, id: :blog_image %></td>
+      <td><%= form.hidden_field :image_cache %></td>
     </tr>
   </table>
   <%= form.submit %>
