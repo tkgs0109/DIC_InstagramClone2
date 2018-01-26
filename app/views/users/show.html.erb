@@ -1,34 +1,32 @@
-<h1><%= @user.name %>のページ</h1>
-<p>メールアドレス: <%= @user.email %></p>
+<h2><%= @user.name %></h2>
+<p>Email: <%= @user.email %></p>
 <% if @user.icon? %>
   <p>
     <strong>Icon:</strong>
     <%= image_tag @user.icon %>
   </p>
 <% else %>
-  <h3>アイコンを登録しましょう</h3>
+  <strong>アイコンを登録しましょう</strong>
   <%= form_with(model: @user, local: true) do |f| %>
     <table>
       <tr>
         <td><%= f.label :icon %></td>
         <td><%= f.file_field :icon, id: :user_icon %></td>
-        <td><%= f.hidden_field :image_cache %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :password %></td>
+        <td><%= f.password_field :password %></td>
       </tr>
     </table>
     <%= f.submit "icon登録" %>
   <% end %>
 <% end %>
-<h2>お気に入り</h2>
+<h3>お気に入り</h3>
 <div class="row">
   <% @favorite_blogs.each do |blog| %>
     <div class="col-xs-12 col-md-6 blog-panel">
-      <h2 class="blogTitle"><%= blog.title %></h2>
+      <p class="blogImage"><%= blog.image %></p>
       <p class="blogContent"><%= blog.content %></p>
-      <div class="blog-links">
-        <%= link_to 'Show', blog, class:'btn btn-default' %>
-        <%= link_to 'Edit', edit_blog_path(blog), class:'btn btn-info' %>
-        <%= link_to 'Destroy', blog, method: :delete, data:{confirm:'Are you sure?'}, class:'btn btn-danger' %>
-      </div>
     </div>
   <% end %>
 </div>

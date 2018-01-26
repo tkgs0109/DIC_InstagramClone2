@@ -10,5 +10,5 @@ class User < ApplicationRecord
   has_many :favorite_blogs, through: :favorites, source: :blog
   has_many :blogs, dependent: :destroy
 
-  mount_uploader :icon, ImageUploader
+  mount_uploader :icon, IconUploader
 end

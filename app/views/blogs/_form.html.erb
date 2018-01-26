@@ -10,20 +10,16 @@
     </div>
   <% end %>
   <table>
-    <tr class="blog_title">
-      <td><%= form.label :title %></td>
-      <td><%= form.text_field :title %></td>
-    </tr>
-    <tr class="blog_content">
-      <td><%= form.label :content %></td>
-      <td><%= form.text_area :content, :size => "30x5" %></td>
-    </tr>
     <tr class="blog_image">
       <td><%= form.label :image %></td>
       <td><%= form.file_field :image, id: :blog_image %></td>
       <td><%= form.hidden_field :image_cache %></td>
     </tr>
+    <tr class="blog_content">
+      <td><%= form.label :content %></td>
+      <td><%= form.text_area :content, :size => "30x2" %></td>
+    </tr>
   </table>
   <%= form.submit %>
 <% end %>
-<%= link_to "ブログ一覧画面にもどる", blogs_path %>
+<%= link_to "投稿一覧画面にもどる", blogs_path %>

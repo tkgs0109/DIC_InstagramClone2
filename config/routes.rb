@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   root 'welcome#top'
   resources :blogs
-  resources :contacts
-  resources :users
+  resources :users, only: [:new, :create, :show, :update]
   resources :sessions, only: [:new, :create, :destroy]
   resources :favorites, only: [:create, :destroy]
 
